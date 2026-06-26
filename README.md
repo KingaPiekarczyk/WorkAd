@@ -3,15 +3,15 @@
 ## Screenshots 
 Home
  
-![Home_page](WorkAd/Read_me_files/Home.jpg)
+![Home_page](WorkAd/ReadMeFiles/Home.jpg)
 Add advert
  
-![Add/Edit page](WorkAd/Read_me_files/AddEdit.jpg)
+![Add/Edit page](WorkAd/ReadMeFiles/AddEdit.jpg)
 Edit advert
  
-![Edit page](WorkAd/Read_me_files/Edit.jpg)
+![Edit page](WorkAd/ReadMeFiles/Edit.jpg)
 
-![Edit1 page](WorkAd/Read_me_files/Edit2.jpg)
+![Edit1 page](WorkAd/ReadMeFiles/Edit2.jpg)
 Delete Page
 
 ![Delete page](WorkAd/Read_me_files/Delete.jpg)
@@ -27,7 +27,7 @@ Delete Page
 3. adding/edit/delete existing adverts
 
 # Folder Structure:
-![Project Tree](WorkAd/Read_me_files/tree.png)
+![Project Tree](WorkAd/ReadMeFiles/tree.png)
 
 # Author:
 Kinga Prochowicz
