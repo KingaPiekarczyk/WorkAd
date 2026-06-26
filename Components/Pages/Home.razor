@@ -35,30 +35,37 @@
             @foreach (var ad in adverts)
             {
                 <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">@ad.Title</h5>
+                    <div class="card h-100 shadow-sm border-0" style="background: #F3F8FF;">
 
-                            <h6 class="card-subtitle mb-2 text-muted">
-                                @($"{ad.HourlyRate:0.00} zł / h")
-                            </h6>
-
-                            <p class="card-text">@ad.Description</p>
-
-                            <p class="card-text">
-                                <strong>Work type:</strong> @ad.WorkType<br />
-                                <strong>Contract type:</strong> @ad.ContractType<br />
-                                <strong>Location:</strong> @ad.Location
-                            </p>
+                        <div class="card-header bg-primary bg-opacity-25 border-0">
+                            <h4 class="fw-bold mb-0">@ad.Title</h4>
                         </div>
 
-                        <div class="card-footer">
+                        <div class="card-body">
+                            <div class="text-muted mb-2">
+                                @($"{ad.HourlyRate:0.00} zł / h") • @ad.Location
+                            </div>
+
+                            <p class="mb-3">@ad.Description</p>
+
+                            <div class="small text-muted">
+                                <strong>Work type:</strong> @ad.WorkType<br />
+                                <strong>Contract:</strong> @ad.ContractType
+                            </div>
+                        </div>
+
+                        <div class="card-footer bg-white border-0 text-end">
                             <small class="text-muted">
-                                Dodano: @ad.CreatedDate.ToString("dd.MM.yyyy HH:mm")
+                                Added: @ad.CreatedDate.ToString("dd.MM.yyyy HH:mm")
                             </small>
                         </div>
+
                     </div>
                 </div>
+
+
+
+
             }
         </div>
     }
