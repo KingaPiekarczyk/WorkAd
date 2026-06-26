@@ -1,20 +1,18 @@
 # GetJob - Razor Pages
 
 ## Screenshots 
-Home
- 
-![Home_page](WorkAd/ReadMeFiles/Home.jpg)
-Add advert
- 
-![Add/Edit page](WorkAd/ReadMeFiles/AddEdit.jpg)
-Edit advert
- 
-![Edit page](WorkAd/ReadMeFiles/Edit.jpg)
+**Home**
+![Home_page](ReadMeFiles/Home.jpg)
 
-![Edit1 page](WorkAd/ReadMeFiles/Edit2.jpg)
-Delete Page
+**Add advert**
+![Add/Edit page](ReadMeFiles/AddEdit.jpg)
 
-![Delete page](WorkAd/Read_me_files/Delete.jpg)
+**Edit advert**
+![Edit page](ReadMeFiles/Edit.jpg)
+![Edit1 page](ReadMeFiles/Edit2.jpg)
+
+**Delete Page**
+![Delete page](ReadMeFiles/Delete.jpg)
 
 
 # Technologies Used:
@@ -27,7 +25,7 @@ Delete Page
 3. adding/edit/delete existing adverts
 
 # Folder Structure:
-![Project Tree](WorkAd/ReadMeFiles/tree.png)
+![Project Tree](ReadMeFiles/tree.png)
 
 # Author:
 Kinga Prochowicz
