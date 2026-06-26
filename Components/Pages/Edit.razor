@@ -1,0 +1,84 @@
+﻿@page "/edit-workadvert"
+@using WorkAd.Data
+@using WorkAd.Components
+@inject WorkAdvertService WorkAdvertService
+@inject NavigationManager NavigationManager
+@rendermode InteractiveServer
+
+<PageTitle>Edit Adverts</PageTitle>
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="d-flex align-items-center">
+            <h1 class="fw-semibold mb-0 me-3">Edit adverts</h1>
+            <a class="btn btn-secondary" href="/">Back</a>
+        </div>
+    </div>
+
+    @if (isLoading)
+    {
+        <div class="text-center py-5">
+            <div class="spinner-border text-primary" role="status"></div>
+            <p class="mt-3">Loading...</p>
+        </div>
+    }
+    else if (adverts == null || !adverts.Any())
+    {
+        <div class="alert alert-info">No adverts to edit.</div>
+    }
+    else
+    {
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            @foreach (var ad in adverts)
+            {
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">@ad.Title</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">@($"{ad.HourlyRate:0.00} zł / h")</h6>
+                            <p class="card-text">@ad.Description</p>
+                            <p class="card-text">
+                                <strong>Work type:</strong> @ad.WorkType<br />
+                                <strong>Contract type:</strong> @ad.ContractType<br />
+                                <strong>Location:</strong> @ad.Location
+                            </p>
+                        </div>
+
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <small class="text-muted">Added: @ad.CreatedDate.ToString("dd.MM.yyyy HH:mm")</small>
+
+                            <button class="bi bi-pencil-square ms-2"
+                                    @onclick:stopPropagation="true"
+                                    @onclick="() => EditAdvert(ad.Id)">
+
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@code {
+    private List<WorkAdvert>? adverts;
+    private bool isLoading;
+
+    protected override async Task OnInitializedAsync() => await LoadAdverts();
+
+    private async Task LoadAdverts()
+    {
+        isLoading = true;
+        try
+        {
+            adverts = await WorkAdvertService.GetAllWorkAdvertsAsync();
+        }
+        finally
+        {
+            isLoading = false;
+            StateHasChanged();
+        }
+    }
+
+    private void EditAdvert(int id) => NavigationManager.NavigateTo($"/edit-workadvert/{id}");
+}
